@@ -32,14 +32,18 @@
             projectSplitContainer = new SplitContainer();
             projectTreeView = new PSEControls.ProjectTreeView();
             propertyGrid = new PropertyGrid();
+            contentViewer = new PSEControls.Viewer();
             menuStrip = new MenuStrip();
+            настройкиToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)mainSplitContainer).BeginInit();
             mainSplitContainer.Panel1.SuspendLayout();
+            mainSplitContainer.Panel2.SuspendLayout();
             mainSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)projectSplitContainer).BeginInit();
             projectSplitContainer.Panel1.SuspendLayout();
             projectSplitContainer.Panel2.SuspendLayout();
             projectSplitContainer.SuspendLayout();
+            menuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // mainSplitContainer
@@ -52,6 +56,10 @@
             // mainSplitContainer.Panel1
             // 
             mainSplitContainer.Panel1.Controls.Add(projectSplitContainer);
+            // 
+            // mainSplitContainer.Panel2
+            // 
+            mainSplitContainer.Panel2.Controls.Add(contentViewer);
             mainSplitContainer.Size = new Size(784, 537);
             mainSplitContainer.SplitterDistance = 265;
             mainSplitContainer.TabIndex = 0;
@@ -91,13 +99,28 @@
             propertyGrid.Size = new Size(265, 196);
             propertyGrid.TabIndex = 0;
             // 
+            // contentViewer
+            // 
+            contentViewer.Dock = DockStyle.Fill;
+            contentViewer.Location = new Point(0, 0);
+            contentViewer.Name = "contentViewer";
+            contentViewer.Size = new Size(515, 537);
+            contentViewer.TabIndex = 0;
+            // 
             // menuStrip
             // 
+            menuStrip.Items.AddRange(new ToolStripItem[] { настройкиToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Size = new Size(784, 24);
             menuStrip.TabIndex = 0;
             menuStrip.Text = "menuStrip";
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            настройкиToolStripMenuItem.Size = new Size(79, 20);
+            настройкиToolStripMenuItem.Text = "Настройки";
             // 
             // MainForm
             // 
@@ -111,12 +134,15 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Редактор СТМ";
             mainSplitContainer.Panel1.ResumeLayout(false);
+            mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)mainSplitContainer).EndInit();
             mainSplitContainer.ResumeLayout(false);
             projectSplitContainer.Panel1.ResumeLayout(false);
             projectSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)projectSplitContainer).EndInit();
             projectSplitContainer.ResumeLayout(false);
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,5 +154,7 @@
         private PSEControls.ProjectTreeView projectTreeView;
         private PropertyGrid propertyGrid;
         private MenuStrip menuStrip;
+        private PSEControls.Viewer contentViewer;
+        private ToolStripMenuItem настройкиToolStripMenuItem;
     }
 }

@@ -28,17 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            treeView = new TreeView();
             SuspendLayout();
+            // 
+            // treeView
+            // 
+            treeView.Dock = DockStyle.Fill;
+            treeView.Location = new Point(0, 0);
+            treeView.Name = "treeView";
+            treeView.Size = new Size(500, 500);
+            treeView.TabIndex = 0;
             // 
             // ProjectTreeView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(treeView);
             Name = "ProjectTreeView";
-            Size = new Size(800, 450);
+            Size = new Size(500, 500);
             ResumeLayout(false);
         }
 
         #endregion
+
+        private TreeView treeView;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace PSEControls
+﻿using System.Windows.Forms;
+
+namespace PSEControls
 {
     partial class ProjectTreeView
     {
@@ -28,14 +30,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectTreeView));
+            imageList = new ImageList(components);
             treeView = new TreeView();
             SuspendLayout();
+            // 
+            // imageList
+            // 
+            imageList.ColorDepth = ColorDepth.Depth8Bit;
+            imageList.ImageStream = (ImageListStreamer)resources.GetObject("imageList.ImageStream");
+            imageList.TransparentColor = Color.Transparent;
+            imageList.Images.SetKeyName(0, "icons8-wrench-50.png");
+            imageList.Images.SetKeyName(1, "icons8-library-30.png");
+            imageList.Images.SetKeyName(2, "icons8-pipe-26.png");
+            imageList.Images.SetKeyName(3, "icons8-pipe-24.png");
+            imageList.Images.SetKeyName(4, "icons8-room-36.png");
             // 
             // treeView
             // 
             treeView.Dock = DockStyle.Fill;
+            treeView.ImageIndex = 0;
+            treeView.ImageList = imageList;
             treeView.Location = new Point(0, 0);
             treeView.Name = "treeView";
+            treeView.SelectedImageIndex = 0;
             treeView.Size = new Size(500, 500);
             treeView.TabIndex = 0;
             // 
@@ -51,6 +70,7 @@
 
         #endregion
 
+        private ImageList imageList;
         private TreeView treeView;
     }
 }

@@ -30,11 +30,13 @@
         {
             mainSplitContainer = new SplitContainer();
             projectSplitContainer = new SplitContainer();
-            projectTreeView = new PSEControls.ProjectTreeView();
+            solutionTreeView = new PSEControls.ProjectTreeView();
             propertyGrid = new PropertyGrid();
             contentViewer = new PSEControls.Viewer();
             menuStrip = new MenuStrip();
-            настройкиToolStripMenuItem = new ToolStripMenuItem();
+            mnuFile = new ToolStripMenuItem();
+            mnuOpen = new ToolStripMenuItem();
+            folderBrowser = new FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)mainSplitContainer).BeginInit();
             mainSplitContainer.Panel1.SuspendLayout();
             mainSplitContainer.Panel2.SuspendLayout();
@@ -74,7 +76,7 @@
             // 
             // projectSplitContainer.Panel1
             // 
-            projectSplitContainer.Panel1.Controls.Add(projectTreeView);
+            projectSplitContainer.Panel1.Controls.Add(solutionTreeView);
             // 
             // projectSplitContainer.Panel2
             // 
@@ -83,13 +85,14 @@
             projectSplitContainer.SplitterDistance = 337;
             projectSplitContainer.TabIndex = 0;
             // 
-            // projectTreeView
+            // solutionTreeView
             // 
-            projectTreeView.Dock = DockStyle.Fill;
-            projectTreeView.Location = new Point(0, 0);
-            projectTreeView.Name = "projectTreeView";
-            projectTreeView.Size = new Size(265, 337);
-            projectTreeView.TabIndex = 0;
+            solutionTreeView.Dock = DockStyle.Fill;
+            solutionTreeView.Location = new Point(0, 0);
+            solutionTreeView.Name = "solutionTreeView";
+            solutionTreeView.Size = new Size(265, 337);
+            solutionTreeView.Solution = null;
+            solutionTreeView.TabIndex = 0;
             // 
             // propertyGrid
             // 
@@ -109,18 +112,26 @@
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { настройкиToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { mnuFile });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Size = new Size(784, 24);
             menuStrip.TabIndex = 0;
             menuStrip.Text = "menuStrip";
             // 
-            // настройкиToolStripMenuItem
+            // mnuFile
             // 
-            настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            настройкиToolStripMenuItem.Size = new Size(79, 20);
-            настройкиToolStripMenuItem.Text = "Настройки";
+            mnuFile.DropDownItems.AddRange(new ToolStripItem[] { mnuOpen });
+            mnuFile.Name = "mnuFile";
+            mnuFile.Size = new Size(48, 20);
+            mnuFile.Text = "Файл";
+            // 
+            // mnuOpen
+            // 
+            mnuOpen.Name = "mnuOpen";
+            mnuOpen.Size = new Size(249, 22);
+            mnuOpen.Text = "Открыть рабочее пространство";
+            mnuOpen.Click += mnuOpen_Click;
             // 
             // MainForm
             // 
@@ -151,10 +162,12 @@
 
         private SplitContainer mainSplitContainer;
         private SplitContainer projectSplitContainer;
-        private PSEControls.ProjectTreeView projectTreeView;
+        private PSEControls.ProjectTreeView solutionTreeView;
         private PropertyGrid propertyGrid;
         private MenuStrip menuStrip;
         private PSEControls.Viewer contentViewer;
-        private ToolStripMenuItem настройкиToolStripMenuItem;
+        private ToolStripMenuItem mnuFile;
+        private ToolStripMenuItem mnuOpen;
+        private FolderBrowserDialog folderBrowser;
     }
 }

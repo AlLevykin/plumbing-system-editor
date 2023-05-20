@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PSEClassLibrary\PSEClassLibrary.csproj" />
     <ProjectReference Include="..\PSEControls\PSEControls.csproj" />
   </ItemGroup>
 

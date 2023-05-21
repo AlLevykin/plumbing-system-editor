@@ -47,7 +47,62 @@ namespace PSEClassLibrary.Helpers
         {
             CheckPath(path);
             Solution s = new(path);
+            GetPipes(s);
+            GetModules(s);
+            GetFittings(s);
             return s;
+        }
+
+        private static void GetPipes(Solution s)
+        {
+            DirectoryInfo dir = new DirectoryInfo(s.PipesPath);
+            FileInfo[] files = dir.GetFiles("*.pipe");
+            foreach (FileInfo file in files) 
+            { 
+                string jsonString = File.ReadAllText(file.FullName);
+                Pipe? pipe = JsonSerializer.Deserialize<Pipe>(jsonString);
+                if (pipe != null)
+                {
+                    s.Library.Pipes.Add(pipe);
+                }
+            }
+        }
+
+        private static void GetModules(Solution s)
+        {
+            DirectoryInfo dir = new DirectoryInfo(s.ModulesPath);
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            foreach (DirectoryInfo dirInfo in dirs) {
+                FileInfo[] files = dirInfo.GetFiles("*.module");
+                foreach (FileInfo file in files) 
+                {
+                    string jsonString = File.ReadAllText(file.FullName);
+                    Module? module = JsonSerializer.Deserialize<Module>(jsonString);
+                    if (module != null)
+                    {
+                        s.Library.Modules.Add(module);
+                    }
+                }
+            }
+        }
+
+        private static void GetFittings(Solution s)
+        {
+            DirectoryInfo dir = new DirectoryInfo(s.FittingsPath);
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            foreach (DirectoryInfo dirInfo in dirs)
+            {
+                FileInfo[] files = dirInfo.GetFiles("*.fitting");
+                foreach (FileInfo file in files)
+                {
+                    string jsonString = File.ReadAllText(file.FullName);
+                    Fitting? fitting = JsonSerializer.Deserialize<Fitting>(jsonString);
+                    if (fitting != null)
+                    {
+                        s.Library.Fittings.Add(fitting);
+                    }
+                }
+            }
         }
 
         public static Pipe NewPipe(Solution s, string index)

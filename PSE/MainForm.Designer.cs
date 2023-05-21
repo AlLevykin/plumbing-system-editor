@@ -144,6 +144,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Редактор СТМ";
+            Load += MainForm_Load;
             mainSplitContainer.Panel1.ResumeLayout(false);
             mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)mainSplitContainer).EndInit();

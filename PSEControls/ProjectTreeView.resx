@@ -125,7 +125,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAxAsAAAJNU0Z0AUkBTAIBAQUB
-        AAFIAQABSAEAARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEgAwABAQEAAQgG
+        AAF4AQABeAEAARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEgAwABAQEAAQgG
         AAEIGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -153,9 +153,9 @@
         AAH/AcwBMwEAAf8BzAFmAQAB/wHMAZkBAAH/AswBAAH/AcwB/wEAAv8BMwEAAcwB/wFmAQAC/wGZAQAC
         /wHMAQACZgH/AQABZgH/AWYBAAFmAv8BAAH/AmYBAAH/AWYB/wEAAv8BZgEAASEBAAGlAQADXwEAA3cB
         AAOGAQADlgEAA8sBAAOyAQAD1wEAA90BAAPjAQAD6gEAA/EBAAP4AQAB8AH7Af8BAAGkAqABAAOAAwAB
-        /wIAAf8DAAL/AQAB/wMAAf8BAAH/AQAC/wIAA/+HAAH/AZIB+AEHAf86AAGSBesB8jgAAe0H6wHvNgAB
-        8QH/AfEB+APrAfcC9AHyNQAC+AHwAf8B8QHsAfQCAAHrAQc1AAH4A+sB8wEAAe8B/wEAAesBBzUAAfgB
-        6wEHAfgB7QEAAesC/wHrAQc1AAH4AesB/wHwAe0BAAHrAfEB7QHrAQc1AAHsAesB+ALtAQAE6wHwNgAB
+        /wIAAf8DAAL/AQAB/wMAAf8BAAH/AQAC/wIAA/+HAAH/AZIB7AEHAf86AAGSBesB8jgAAe0H6wHvNgAB
+        8QH/AfEB7APrAfcC9AHyNQAC7AHwAf8B8QHsAfQCAAHrAQc1AAHsA+sB8wEAAe8B/wEAAesBBzUAAewB
+        6wEHAewB7QEAAesC/wHrAQc1AAHsAesB/wHwAe0BAAHrAfEB7QHrAQc1AAHsAesB7ALtAQAE6wHwNgAB
         BwLrAe0BAAPrAfQ4AAH/Ae8B7QEAAewB8TwAAf8BAAH/twAB/wHsAfQoAAHyAewB7wYAAfMB8AHyAfAB
         8gHwAf8FAAPrAfIPAAHsBgABBwHwDwAB8gHrAZIGAAEHAesB9wHrAfcB6wH/BQAE6wHyDAAB7AvrAQcN
         AAH/AewB8wYAAfQE7wHyAf8FAAH/BOsB8iYAAfQB/wcAAfIC7wG8CAAB/wTrAfILAAHsAesB7AEAAe0C
@@ -177,4 +177,19 @@
         gAGBAfwBPwH/AQwB4gEfAYIB/wH4AR8B/wEHAeIBHwGHAf8B+AEPAf8BgwL/AQcB/wH4AQ8E/wEHA/8L
 </value>
   </data>
+  <metadata name="mnuProjects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>120, 17</value>
+  </metadata>
+  <metadata name="mnuPipes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>239, 17</value>
+  </metadata>
+  <metadata name="mnuModules.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>344, 17</value>
+  </metadata>
+  <metadata name="mnuFittings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>467, 17</value>
+  </metadata>
+  <metadata name="openDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>583, 17</value>
+  </metadata>
 </root>

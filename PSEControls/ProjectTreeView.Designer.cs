@@ -34,6 +34,19 @@ namespace PSEControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectTreeView));
             imageList = new ImageList(components);
             treeView = new TreeView();
+            mnuProjects = new ContextMenuStrip(components);
+            miCreateProject = new ToolStripMenuItem();
+            mnuPipes = new ContextMenuStrip(components);
+            miNewPipe = new ToolStripMenuItem();
+            mnuModules = new ContextMenuStrip(components);
+            miNewModule = new ToolStripMenuItem();
+            mnuFittings = new ContextMenuStrip(components);
+            miNewFitting = new ToolStripMenuItem();
+            openDialog = new OpenFileDialog();
+            mnuProjects.SuspendLayout();
+            mnuPipes.SuspendLayout();
+            mnuModules.SuspendLayout();
+            mnuFittings.SuspendLayout();
             SuspendLayout();
             // 
             // imageList
@@ -58,6 +71,57 @@ namespace PSEControls
             treeView.Size = new Size(500, 500);
             treeView.TabIndex = 0;
             // 
+            // mnuProjects
+            // 
+            mnuProjects.Items.AddRange(new ToolStripItem[] { miCreateProject });
+            mnuProjects.Name = "mnuProjects";
+            mnuProjects.Size = new Size(226, 26);
+            // 
+            // miCreateProject
+            // 
+            miCreateProject.Name = "miCreateProject";
+            miCreateProject.Size = new Size(225, 22);
+            miCreateProject.Text = "Создать новый проект СТМ";
+            // 
+            // mnuPipes
+            // 
+            mnuPipes.Items.AddRange(new ToolStripItem[] { miNewPipe });
+            mnuPipes.Name = "mnuPipes";
+            mnuPipes.Size = new Size(216, 26);
+            // 
+            // miNewPipe
+            // 
+            miNewPipe.Name = "miNewPipe";
+            miNewPipe.Size = new Size(215, 22);
+            miNewPipe.Text = "Добавить новый тип труб";
+            miNewPipe.Click += miNewPipe_Click;
+            // 
+            // mnuModules
+            // 
+            mnuModules.Items.AddRange(new ToolStripItem[] { miNewModule });
+            mnuModules.Name = "mnuModules";
+            mnuModules.Size = new Size(212, 26);
+            // 
+            // miNewModule
+            // 
+            miNewModule.Name = "miNewModule";
+            miNewModule.Size = new Size(211, 22);
+            miNewModule.Text = "Добавить новый тип СТУ";
+            miNewModule.Click += miNewModule_Click;
+            // 
+            // mnuFittings
+            // 
+            mnuFittings.Items.AddRange(new ToolStripItem[] { miNewFitting });
+            mnuFittings.Name = "mnuFittings";
+            mnuFittings.Size = new Size(249, 26);
+            // 
+            // miNewFitting
+            // 
+            miNewFitting.Name = "miNewFitting";
+            miNewFitting.Size = new Size(248, 22);
+            miNewFitting.Text = "Добавить новый тип фиттингов";
+            miNewFitting.Click += miNewFitting_Click;
+            // 
             // ProjectTreeView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -65,6 +129,10 @@ namespace PSEControls
             Controls.Add(treeView);
             Name = "ProjectTreeView";
             Size = new Size(500, 500);
+            mnuProjects.ResumeLayout(false);
+            mnuPipes.ResumeLayout(false);
+            mnuModules.ResumeLayout(false);
+            mnuFittings.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -72,5 +140,14 @@ namespace PSEControls
 
         private ImageList imageList;
         private TreeView treeView;
+        private ContextMenuStrip mnuProjects;
+        private ContextMenuStrip mnuPipes;
+        private ContextMenuStrip mnuModules;
+        private ContextMenuStrip mnuFittings;
+        private ToolStripMenuItem miCreateProject;
+        private ToolStripMenuItem miNewPipe;
+        private ToolStripMenuItem miNewFitting;
+        private ToolStripMenuItem miNewModule;
+        private OpenFileDialog openDialog;
     }
 }

@@ -93,6 +93,7 @@
             solutionTreeView.Size = new Size(265, 337);
             solutionTreeView.Solution = null;
             solutionTreeView.TabIndex = 0;
+            solutionTreeView.CurrentNodeChanged += SolutionTreeView_CurrentNodeChanged;
             // 
             // propertyGrid
             // 

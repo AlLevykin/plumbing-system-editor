@@ -10,6 +10,14 @@ namespace PSE
             InitializeComponent();
         }
 
+        private void SolutionTreeView_CurrentNodeChanged(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node != null)
+            {
+                propertyGrid.SelectedObject = e.Node.Tag;
+            }            
+        }
+
         private bool openSolution(string path)
         {
             if (!Directory.Exists(path))

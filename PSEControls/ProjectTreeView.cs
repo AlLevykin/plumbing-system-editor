@@ -2,11 +2,23 @@
 using PSEClassLibrary;
 using PSEClassLibrary.Helpers;
 using System;
+using System.ComponentModel;
 
 namespace PSEControls
 {
     public partial class ProjectTreeView : UserControl
     {
+        public event TreeViewEventHandler CurrentNodeChanged;
+
+        protected virtual void OnCurrentNodeChanged(TreeViewEventArgs e)
+        {
+            TreeViewEventHandler handler = this.CurrentNodeChanged;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
         private Solution? _solution;
 
         public Solution? Solution
@@ -19,14 +31,14 @@ namespace PSEControls
                 if (_solution == null) return;
 
                 TreeNode prn, ln, pn, fn, mn, nn;
-                prn = new("СТМ") { Tag = "СТМ", ImageIndex = 0, SelectedImageIndex = 0, ContextMenuStrip = mnuProjects };
+                prn = new("СТМ") { Tag = new Section() { Name = "СТМ" }, ImageIndex = 0, SelectedImageIndex = 0, ContextMenuStrip = mnuProjects };
                 mnuProjects.Tag = prn;
                 treeView.Nodes.Add(prn);
 
-                ln = new("Библиотека") { Tag = "Библиотека", ImageIndex = 1, SelectedImageIndex = 1 };
+                ln = new("Библиотека") { Tag = new Section() { Name = "Библиотека" }, ImageIndex = 1, SelectedImageIndex = 1 };
                 treeView.Nodes.Add(ln);
 
-                pn = new("Трубы") { Tag = "Трубы", ImageIndex = 2, SelectedImageIndex = 2, ContextMenuStrip = mnuPipes };
+                pn = new("Трубы") { Tag = new Section() { Name = "Трубы" }, ImageIndex = 2, SelectedImageIndex = 2, ContextMenuStrip = mnuPipes };
                 mnuPipes.Tag = pn;
                 ln.Nodes.Add(pn);
                 foreach (Pipe pipe in _solution.Library.Pipes)
@@ -38,7 +50,7 @@ namespace PSEControls
                     pn.Nodes.Add(nn);
                 }
 
-                fn = new("Фиттинги") { Tag = "Фиттинги", ImageIndex = 3, SelectedImageIndex = 3, ContextMenuStrip = mnuFittings };
+                fn = new("Фиттинги") { Tag = new Section() { Name = "Фиттинги" }, ImageIndex = 3, SelectedImageIndex = 3, ContextMenuStrip = mnuFittings };
                 mnuFittings.Tag = fn;
                 ln.Nodes.Add(fn);
                 foreach (Fitting fitting in _solution.Library.Fittings)
@@ -50,7 +62,7 @@ namespace PSEControls
                     fn.Nodes.Add(nn);
                 }
 
-                mn = new("СТУ") { Tag = "СТУ", ImageIndex = 4, SelectedImageIndex = 4, ContextMenuStrip = mnuModules };
+                mn = new("СТУ") { Tag = new Section() { Name = "СТУ" }, ImageIndex = 4, SelectedImageIndex = 4, ContextMenuStrip = mnuModules };
                 mnuModules.Tag = mn;
                 ln.Nodes.Add(mn);
                 foreach (Module module in _solution.Library.Modules)
@@ -128,6 +140,11 @@ namespace PSEControls
                 TreeNode pn = (TreeNode)mnu.Tag;
                 pn.Nodes.Add(nn);
             }
+        }
+
+        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            this.OnCurrentNodeChanged(e);
         }
     }
 }

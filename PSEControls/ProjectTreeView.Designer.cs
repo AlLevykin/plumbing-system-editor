@@ -70,6 +70,7 @@ namespace PSEControls
             treeView.SelectedImageIndex = 0;
             treeView.Size = new Size(500, 500);
             treeView.TabIndex = 0;
+            treeView.AfterSelect += treeView_AfterSelect;
             // 
             // mnuProjects
             // 

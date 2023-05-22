@@ -5,6 +5,8 @@ namespace PSE
 {
     public partial class MainForm : Form
     {
+        private Solution? _solution;
+
         public MainForm()
         {
             InitializeComponent();
@@ -14,7 +16,15 @@ namespace PSE
         {
             if (e.Node != null)
             {
-                propertyGrid.SelectedObject = e.Node.Tag;
+                object obj = e.Node.Tag;
+                propertyGrid.SelectedObject = obj;
+                contentViewer.ClearViewer();
+                if ((obj is Module) && (_solution != null))
+                {
+                    Module module = (Module)obj;
+                    string dxf = File.ReadAllText(Path.Combine(_solution.ModulesPath, module.Index, module.Drawing));
+                    contentViewer.ShowDXF(dxf);
+                }
             }            
         }
 
@@ -25,9 +35,9 @@ namespace PSE
                 return false;
             }
 
-            Solution solution = SolutionHelper.Open(path);
-            propertyGrid.SelectedObject = solution;
-            solutionTreeView.Solution = solution;
+            _solution = SolutionHelper.Open(path);
+            propertyGrid.SelectedObject = _solution;
+            solutionTreeView.Solution = _solution;
             return true;
         }
 

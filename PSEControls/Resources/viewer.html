@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Проектирование системы водоотведения</title>
+    <style type="text/css">
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script src="http://pse.viewer/dxf-conv.js"></script>
+</head>
+  <body>
+      <div id="svg"></div>
+      <script>
+          const ShowDXF = (dxfContents) => {
+              var svgContainer = document.getElementById('svg');
+              var helper = new Helper(dxfContents);
+              const svg = helper.toSVG();
+              svgContainer.innerHTML = svg;
+          }
+          const ClearViewer = () => {
+              var svgContainer = document.getElementById('svg');
+              svgContainer.innerHTML = '';
+          }
+      </script>
+ </body>
+</html>
